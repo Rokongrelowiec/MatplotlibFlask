@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regression</title>
+    <style>
+        button {
+            color: #fff; 
+            border: none;
+            border-radius: 10px; 
+            box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+            width: 30%;
+            font-size: 18px;
+        }
+        button:hover {
+            outline-color: transparent;
+            outline-style: solid;
+            box-shadow: 0 0 0 4px #fff;
+        }
+        div {
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body style="background-color: #303030; margin-left: auto; 
+margin-right: auto;">
+    <h1 style="color: wheat; text-align: center;">{{ title }} - Linear Regression</h1>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot" style="margin-left: auto; margin-right: auto; display: block;">
+    <br>
+    <div>R² score equals: {{ r2 }}</div>
+    <br>
+    <form action="/" style="text-align: center;">
+        <button type="submit" style="background-color: gold">
+            Go back
+        </button>
+    </form>
+</body>
+</html>

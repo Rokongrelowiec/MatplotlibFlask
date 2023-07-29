@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matplotlib Plot in Flask</title>
+    <style>
+        button {
+            color: #fff; 
+            border: none; 
+            border-radius: 10px; 
+            box-shadow: 0px 0px 2px 2px #000;
+            width: 30%; 
+            font-size: 18px;
+        }
+        button:hover {
+            outline-color: transparent;
+            outline-style: solid;
+            box-shadow: 0 0 0 4px #fff;
+        }
+        select {
+            border: none;
+            padding: 0 4px 0 0;
+            margin: 0;
+            width: 30%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+        }
+    </style>
+</head>
+<body style="background-color: #303030; margin-left: auto; 
+margin-right: auto;">
+    <h1 style="color: wheat; text-align: center;">{{ title }}</h1>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot" style="margin-left: auto; margin-right: auto; display: block;">
+    <br><br>
+    <form action="/process" method="POST" style="text-align: center;">
+        <select name="option_value">
+            {% for country in data_col %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit" style="background-color: #0bd63e; ">
+            Show in the chart above
+        </button>
+    </form>
+    <br><br>
+    <form action="/regress" method="POST" style="text-align: center;">
+        <select name="regression_value">
+            {% for country in data_col %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit"  style="background-color: #f5c107">
+            Linear Regression
+        </button>
+    </form>
+</body>
+</html>
